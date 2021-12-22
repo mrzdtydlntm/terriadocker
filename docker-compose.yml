@@ -71,7 +71,7 @@ services:
       - PGPORT=5432
       - PORT=5000
       - WAIT_HOSTS:postgres:5432
-      - HTTP_PROXY:http://domainluculucu.my.id
+      - HTTP_PROXY:http://deployluculucu.my.id
     # env_file:
     #   - ./backend/.env
     image: mrzdtydlntm/nsi3dv:1.0
