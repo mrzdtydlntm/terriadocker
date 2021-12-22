@@ -1,0 +1,93 @@
+version: '3.6'
+services:
+  # certbot:
+  #   image: certbot/certbot:latest
+  #   command: certonly --webroot --webroot-path=/var/www/certbot --email nsi@gmail.com --agree-tos --no-eff-email -d 3dv.com -d www.3dv.com
+  #   volumes:
+  #       - ./certbot/conf:/etc/letsencrypt
+  #       - ./certbot/logs:/var/log/letsencrypt
+  #       - ./certbot/data:/var/www/certbot
+  nginx:
+    # build:
+      # context: ./nginx
+      # dockerfile: Dockerfile.dev
+    container_name: terria_nginx
+    depends_on:
+      - terria
+      - postgres
+    environment:
+      - WAIT_HOST:terria:3001
+      - WAIT_HOST:terria:5001
+    image: mrzdtydlntm/nsinginx:1.0
+    networks:
+      - terria-network
+    ports:
+      - '80:80'
+      # - '443:443'
+    restart: always
+    # volumes:
+    #   - ./:/var/www/html
+    #   - ./nginx:/etc/nginx/conf.d
+    #   - ./certbot/conf:/etc/nginx/ssl
+    #   - ./certbot/data:/var/www/certbot
+  postgres:
+    # build:
+    #   context: ./sql
+    #   dockerfile: Dockerfile.dev
+    container_name: terria_psql
+    environment:
+      - POSTGRES_HOST=0.0.0.0
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=data_catalogue
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d data_catalogue -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    image: mrzdtydlntm/nsipsql:1.0
+    networks:
+      - terria-network
+    ports:
+      - '5432:5432'
+    tty: true
+    volumes:
+      - ./sql/:/home
+      - dbdata:/var/lib/postgresql/data:rw
+  terria:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.dev
+    container_name: terria_web
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - PGHOST=postgres
+      - PGUSERS=postgres
+      - PGPASSWORD=password
+      - PGDATABASE=data_catalogue
+      - PGPORT=5432
+      - PORT=5000
+      - WAIT_HOSTS:postgres:5432
+    # env_file:
+    #   - ./backend/.env
+    image: mrzdtydlntm/nsi3dv:1.0
+    links:
+      - postgres
+    networks:
+      - terria-network
+    ports:
+      - '3001:3001'
+      - '5000:5000'
+    stdin_open: true
+    volumes:
+      # - /var/www/terria/node_modules
+      - ./wwwroot/test/files:/var/www/terria/wwwroot/test/files
+networks:
+  terria-network:
+    driver: bridge
+volumes:
+  # terria:
+  dbdata:
