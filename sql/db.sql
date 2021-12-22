@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: 3dtiles_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: 3dtiles_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public."3dtiles_data" (
@@ -35,10 +35,10 @@ CREATE TABLE public."3dtiles_data" (
 );
 
 
-ALTER TABLE public."3dtiles_data" OWNER TO jicamap;
+ALTER TABLE public."3dtiles_data" OWNER TO postgres;
 
 --
--- Name: 3dtiles_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: 3dtiles_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public."3dtiles_data_id_seq"
@@ -49,17 +49,17 @@ CREATE SEQUENCE public."3dtiles_data_id_seq"
     CACHE 1;
 
 
-ALTER TABLE public."3dtiles_data_id_seq" OWNER TO jicamap;
+ALTER TABLE public."3dtiles_data_id_seq" OWNER TO postgres;
 
 --
--- Name: 3dtiles_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: 3dtiles_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public."3dtiles_data_id_seq" OWNED BY public."3dtiles_data".id;
 
 
 --
--- Name: czml_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: czml_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.czml_data (
@@ -71,10 +71,10 @@ CREATE TABLE public.czml_data (
 );
 
 
-ALTER TABLE public.czml_data OWNER TO jicamap;
+ALTER TABLE public.czml_data OWNER TO postgres;
 
 --
--- Name: czml_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: czml_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.czml_data_id_seq
@@ -85,17 +85,17 @@ CREATE SEQUENCE public.czml_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.czml_data_id_seq OWNER TO jicamap;
+ALTER TABLE public.czml_data_id_seq OWNER TO postgres;
 
 --
--- Name: czml_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: czml_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.czml_data_id_seq OWNED BY public.czml_data.id;
 
 
 --
--- Name: gltf_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: gltf_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.gltf_data (
@@ -111,10 +111,10 @@ CREATE TABLE public.gltf_data (
 );
 
 
-ALTER TABLE public.gltf_data OWNER TO jicamap;
+ALTER TABLE public.gltf_data OWNER TO postgres;
 
 --
--- Name: gltf_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: gltf_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.gltf_data_id_seq
@@ -125,17 +125,17 @@ CREATE SEQUENCE public.gltf_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.gltf_data_id_seq OWNER TO jicamap;
+ALTER TABLE public.gltf_data_id_seq OWNER TO postgres;
 
 --
--- Name: gltf_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: gltf_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.gltf_data_id_seq OWNED BY public.gltf_data.id;
 
 
 --
--- Name: jsoncsv_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: jsoncsv_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.jsoncsv_data (
@@ -147,10 +147,10 @@ CREATE TABLE public.jsoncsv_data (
 );
 
 
-ALTER TABLE public.jsoncsv_data OWNER TO jicamap;
+ALTER TABLE public.jsoncsv_data OWNER TO postgres;
 
 --
--- Name: jsoncsv_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: jsoncsv_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.jsoncsv_data_id_seq
@@ -161,17 +161,17 @@ CREATE SEQUENCE public.jsoncsv_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.jsoncsv_data_id_seq OWNER TO jicamap;
+ALTER TABLE public.jsoncsv_data_id_seq OWNER TO postgres;
 
 --
--- Name: jsoncsv_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: jsoncsv_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.jsoncsv_data_id_seq OWNED BY public.jsoncsv_data.id;
 
 
 --
--- Name: kml_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: kml_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.kml_data (
@@ -183,10 +183,10 @@ CREATE TABLE public.kml_data (
 );
 
 
-ALTER TABLE public.kml_data OWNER TO jicamap;
+ALTER TABLE public.kml_data OWNER TO postgres;
 
 --
--- Name: kml_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: kml_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.kml_data_id_seq
@@ -197,17 +197,17 @@ CREATE SEQUENCE public.kml_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.kml_data_id_seq OWNER TO jicamap;
+ALTER TABLE public.kml_data_id_seq OWNER TO postgres;
 
 --
--- Name: kml_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: kml_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.kml_data_id_seq OWNED BY public.kml_data.id;
 
 
 --
--- Name: shp_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: shp_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.shp_data (
@@ -219,10 +219,10 @@ CREATE TABLE public.shp_data (
 );
 
 
-ALTER TABLE public.shp_data OWNER TO jicamap;
+ALTER TABLE public.shp_data OWNER TO postgres;
 
 --
--- Name: shp_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: shp_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.shp_data_id_seq
@@ -233,17 +233,17 @@ CREATE SEQUENCE public.shp_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.shp_data_id_seq OWNER TO jicamap;
+ALTER TABLE public.shp_data_id_seq OWNER TO postgres;
 
 --
--- Name: shp_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: shp_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.shp_data_id_seq OWNED BY public.shp_data.id;
 
 
 --
--- Name: wms_data; Type: TABLE; Schema: public; Owner: jicamap
+-- Name: wms_data; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.wms_data (
@@ -254,10 +254,10 @@ CREATE TABLE public.wms_data (
 );
 
 
-ALTER TABLE public.wms_data OWNER TO jicamap;
+ALTER TABLE public.wms_data OWNER TO postgres;
 
 --
--- Name: wms_data_id_seq; Type: SEQUENCE; Schema: public; Owner: jicamap
+-- Name: wms_data_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.wms_data_id_seq
@@ -268,66 +268,66 @@ CREATE SEQUENCE public.wms_data_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.wms_data_id_seq OWNER TO jicamap;
+ALTER TABLE public.wms_data_id_seq OWNER TO postgres;
 
 --
--- Name: wms_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: jicamap
+-- Name: wms_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.wms_data_id_seq OWNED BY public.wms_data.id;
 
 
 --
--- Name: 3dtiles_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: 3dtiles_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."3dtiles_data" ALTER COLUMN id SET DEFAULT nextval('public."3dtiles_data_id_seq"'::regclass);
 
 
 --
--- Name: czml_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: czml_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.czml_data ALTER COLUMN id SET DEFAULT nextval('public.czml_data_id_seq'::regclass);
 
 
 --
--- Name: gltf_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: gltf_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.gltf_data ALTER COLUMN id SET DEFAULT nextval('public.gltf_data_id_seq'::regclass);
 
 
 --
--- Name: jsoncsv_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: jsoncsv_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.jsoncsv_data ALTER COLUMN id SET DEFAULT nextval('public.jsoncsv_data_id_seq'::regclass);
 
 
 --
--- Name: kml_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: kml_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.kml_data ALTER COLUMN id SET DEFAULT nextval('public.kml_data_id_seq'::regclass);
 
 
 --
--- Name: shp_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: shp_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.shp_data ALTER COLUMN id SET DEFAULT nextval('public.shp_data_id_seq'::regclass);
 
 
 --
--- Name: wms_data id; Type: DEFAULT; Schema: public; Owner: jicamap
+-- Name: wms_data id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.wms_data ALTER COLUMN id SET DEFAULT nextval('public.wms_data_id_seq'::regclass);
 
 
 --
--- Data for Name: 3dtiles_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: 3dtiles_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public."3dtiles_data" (id, type, name, description, url, options, rectangle) FROM stdin;
@@ -335,7 +335,7 @@ COPY public."3dtiles_data" (id, type, name, description, url, options, rectangle
 
 
 --
--- Data for Name: czml_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: czml_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.czml_data (id, name, description, url, type) FROM stdin;
@@ -343,7 +343,7 @@ COPY public.czml_data (id, name, description, url, type) FROM stdin;
 
 
 --
--- Data for Name: gltf_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: gltf_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.gltf_data (id, name, type, url, description, origin, "upAxis", "forwardAxis", "originalFile") FROM stdin;
@@ -351,7 +351,7 @@ COPY public.gltf_data (id, name, type, url, description, origin, "upAxis", "forw
 
 
 --
--- Data for Name: jsoncsv_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: jsoncsv_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.jsoncsv_data (id, type, name, url, description) FROM stdin;
@@ -359,7 +359,7 @@ COPY public.jsoncsv_data (id, type, name, url, description) FROM stdin;
 
 
 --
--- Data for Name: kml_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: kml_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.kml_data (id, name, description, url, type) FROM stdin;
@@ -367,7 +367,7 @@ COPY public.kml_data (id, name, description, url, type) FROM stdin;
 
 
 --
--- Data for Name: shp_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: shp_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.shp_data (id, type, name, description, url) FROM stdin;
@@ -375,7 +375,7 @@ COPY public.shp_data (id, type, name, description, url) FROM stdin;
 
 
 --
--- Data for Name: wms_data; Type: TABLE DATA; Schema: public; Owner: jicamap
+-- Data for Name: wms_data; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.wms_data (id, type, name, url) FROM stdin;
@@ -383,56 +383,56 @@ COPY public.wms_data (id, type, name, url) FROM stdin;
 
 
 --
--- Name: 3dtiles_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: 3dtiles_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public."3dtiles_data_id_seq"', 1, false);
 
 
 --
--- Name: czml_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: czml_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.czml_data_id_seq', 1, false);
 
 
 --
--- Name: gltf_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: gltf_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.gltf_data_id_seq', 1, false);
 
 
 --
--- Name: jsoncsv_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: jsoncsv_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.jsoncsv_data_id_seq', 1, false);
 
 
 --
--- Name: kml_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: kml_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.kml_data_id_seq', 1, false);
 
 
 --
--- Name: shp_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: shp_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.shp_data_id_seq', 1, false);
 
 
 --
--- Name: wms_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jicamap
+-- Name: wms_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.wms_data_id_seq', 1, false);
 
 
 --
--- Name: 3dtiles_data 3dtiles_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: 3dtiles_data 3dtiles_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public."3dtiles_data"
@@ -440,7 +440,7 @@ ALTER TABLE ONLY public."3dtiles_data"
 
 
 --
--- Name: czml_data czml_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: czml_data czml_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.czml_data
@@ -448,7 +448,7 @@ ALTER TABLE ONLY public.czml_data
 
 
 --
--- Name: gltf_data gltf_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: gltf_data gltf_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.gltf_data
@@ -456,7 +456,7 @@ ALTER TABLE ONLY public.gltf_data
 
 
 --
--- Name: jsoncsv_data jsoncsv_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: jsoncsv_data jsoncsv_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.jsoncsv_data
@@ -464,7 +464,7 @@ ALTER TABLE ONLY public.jsoncsv_data
 
 
 --
--- Name: kml_data kml_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: kml_data kml_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.kml_data
@@ -472,7 +472,7 @@ ALTER TABLE ONLY public.kml_data
 
 
 --
--- Name: shp_data shp_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: shp_data shp_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.shp_data
@@ -480,7 +480,7 @@ ALTER TABLE ONLY public.shp_data
 
 
 --
--- Name: wms_data wms_data_pkey; Type: CONSTRAINT; Schema: public; Owner: jicamap
+-- Name: wms_data wms_data_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.wms_data
