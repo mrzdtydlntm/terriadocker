@@ -6,6 +6,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
+      - terria:/var/www/html
     depends_on:
       - nginx
   nginx:
@@ -27,11 +28,10 @@ services:
       - '443:443'
     restart: always
     volumes:
-      # - ./:/var/www/html
+      - terria:/var/www/html
       - ./nginx:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - dhparam:/etc/ssl/certs
   postgres:
     # build:
     #   context: ./sql
@@ -86,6 +86,7 @@ services:
     stdin_open: true
     volumes:
       # - /var/www/terria/node_modules
+      - terria:/var/www/terria
       - ./wwwroot/test/files:/var/www/terria/wwwroot/test/files
 networks:
   terria-network:
@@ -93,5 +94,5 @@ networks:
 volumes:
   certbot-etc:
   certbot-var:
-  # terria:
   dbdata:
+  terria:
