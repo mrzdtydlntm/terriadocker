@@ -8,6 +8,8 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
       # - terria:/var/www/html
+    depends_on:
+      - nginx
   nginx:
     # build:
       # context: ./nginx
