@@ -2,11 +2,12 @@ version: '3.6'
 services:
   certbot:
     image: certbot/certbot:latest
+    container_name: certbot
     command: certonly --webroot --webroot-path=/var/www/html --email abu.amr.mrz@gmail.com --agree-tos --no-eff-email --force-renewal -d deployluculucu.my.id -d www.deployluculucu.my.id
     volumes:
-      - ./certbot-etc:/etc/letsencrypt
-      - ./certbot-vars:/var/lib/letsencrypt
-      - terria:/var/www/html
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      # - terria:/var/www/html
     depends_on:
       - nginx
   nginx:
@@ -28,10 +29,10 @@ services:
       - '443:443'
     restart: always
     volumes:
-      - terria:/var/www/html
+      # - terria:/var/www/html
       - ./nginx:/etc/nginx/conf.d
-      - ./certbot-etc:/etc/letsencrypt
-      - ./certbot-vars:/var/lib/letsencrypt
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
   postgres:
     # build:
     #   context: ./sql
@@ -86,11 +87,11 @@ services:
     stdin_open: true
     volumes:
       # - /var/www/terria/node_modules
-      - terria:/var/www/terria
+      # - terria:/var/www/terria
       - ./wwwroot/test/files:/var/www/terria/wwwroot/test/files
 networks:
   terria-network:
     driver: bridge
 volumes:
   dbdata:
-  terria:
+  # terria:
