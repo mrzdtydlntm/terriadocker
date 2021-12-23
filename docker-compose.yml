@@ -15,6 +15,7 @@ services:
     depends_on:
       - terria
       - postgres
+      - certbot
     environment:
       - WAIT_HOST:terria:3001
       - WAIT_HOST:terria:5001
