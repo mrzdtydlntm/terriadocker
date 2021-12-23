@@ -1,12 +1,12 @@
 version: '3.6'
 services:
-  # certbot:
-  #   image: certbot/certbot:latest
-  #   command: certonly --webroot --webroot-path=/var/www/certbot --email nsi@gmail.com --agree-tos --no-eff-email -d 3dv.com -d www.3dv.com
-  #   volumes:
-  #       - ./certbot/conf:/etc/letsencrypt
-  #       - ./certbot/logs:/var/log/letsencrypt
-  #       - ./certbot/data:/var/www/certbot
+  certbot:
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/var/www/certbot --email abu.amr.mrz@gmail.com --agree-tos --no-eff-email -d deployluculucu.my.id -d www.deployluculucu.my.id
+    volumes:
+        - ./certbot/conf:/etc/letsencrypt
+        - ./certbot/logs:/var/log/letsencrypt
+        - ./certbot/data:/var/www/certbot
   nginx:
     # build:
       # context: ./nginx
@@ -23,13 +23,13 @@ services:
       - terria-network
     ports:
       - '80:80'
-      # - '443:443'
+      - '443:443'
     restart: always
-    # volumes:
-    #   - ./:/var/www/html
-    #   - ./nginx:/etc/nginx/conf.d
-    #   - ./certbot/conf:/etc/nginx/ssl
-    #   - ./certbot/data:/var/www/certbot
+    volumes:
+      # - ./:/var/www/html
+      - ./nginx:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/data:/var/www/certbot
   postgres:
     # build:
     #   context: ./sql
