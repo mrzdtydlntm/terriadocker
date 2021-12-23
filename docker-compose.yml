@@ -3,13 +3,11 @@ services:
   certbot:
     image: certbot/certbot:latest
     container_name: certbot
-    # command: certonly --webroot -w /var/www/certbot --force-renewal --agree-tos --email abu.amr.mrz@gmail.com -d deployluculucu.my.id
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email abu.amr.mrz@gmail.com -d deployluculucu.my.id
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
       # - terria:/var/www/html
-    depends_on:
-      - nginx
   nginx:
     # build:
       # context: ./nginx
@@ -26,7 +24,7 @@ services:
       - terria-network
     ports:
       - '80:80'
-      # - '443:443'
+      - '443:443'
     restart: always
     volumes:
       # - terria:/var/www/html
