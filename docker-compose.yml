@@ -2,11 +2,12 @@ version: '3.6'
 services:
   certbot:
     image: certbot/certbot:latest
-    command: certonly --webroot --webroot-path=/var/www/certbot --email abu.amr.mrz@gmail.com --agree-tos --no-eff-email -d deployluculucu.my.id -d www.deployluculucu.my.id
+    command: certonly --webroot --webroot-path=/var/www/html --email abu.amr.mrz@gmail.com --agree-tos --no-eff-email --force-renewal -d deployluculucu.my.id -d www.deployluculucu.my.id
     volumes:
-        - ./certbot/conf:/etc/letsencrypt
-        - ./certbot/logs:/var/log/letsencrypt
-        - ./certbot/data:/var/www/certbot
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - nginx
   nginx:
     # build:
       # context: ./nginx
@@ -15,7 +16,6 @@ services:
     depends_on:
       - terria
       - postgres
-      - certbot
     environment:
       - WAIT_HOST:terria:3001
       - WAIT_HOST:terria:5001
@@ -29,8 +29,9 @@ services:
     volumes:
       # - ./:/var/www/html
       - ./nginx:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/nginx/ssl
-      - ./certbot/data:/var/www/certbot
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - dhparam:/etc/ssl/certs
   postgres:
     # build:
     #   context: ./sql
