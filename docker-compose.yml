@@ -91,5 +91,7 @@ networks:
   terria-network:
     driver: bridge
 volumes:
+  certbot-etc:
+  certbot-var:
   # terria:
   dbdata:
