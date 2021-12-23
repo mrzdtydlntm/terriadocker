@@ -8,6 +8,8 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
       # - terria:/var/www/html
+    depends_on:
+      - nginx
   nginx:
     # build:
       # context: ./nginx
@@ -24,11 +26,11 @@ services:
       - terria-network
     ports:
       - '80:80'
-      - '443:443'
+      # - '443:443'
     restart: always
     volumes:
       # - terria:/var/www/html
-      - ./nginx:/etc/nginx/conf.d
+      # - ./nginx:/etc/nginx/conf.d
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
   postgres:
