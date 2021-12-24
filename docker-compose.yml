@@ -9,16 +9,16 @@ services:
       - ./certbot/www:/var/www/certbot
       - ./certbot/logs:/var/log
       # - terria:/var/www/html
-    # depends_on:
-    #   - nginx
+    depends_on:
+      - nginx
   nginx:
     # build:
       # context: ./nginx
       # dockerfile: Dockerfile.dev
     container_name: terria_nginx
-    # depends_on:
-    #   - terria
-    #   - postgres
+    depends_on:
+      - terria
+      - postgres
     environment:
       - WAIT_HOST:terria:3001
       - WAIT_HOST:terria:5001
@@ -63,9 +63,9 @@ services:
     #   context: .
     #   dockerfile: Dockerfile.dev
     container_name: terria_web
-    # depends_on:
-    #   postgres:
-    #     condition: service_healthy
+    depends_on:
+      postgres:
+        condition: service_healthy
     environment:
       - CHOKIDAR_USEPOLLING=true
       - PGHOST=postgres
