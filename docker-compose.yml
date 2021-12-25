@@ -62,6 +62,7 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile.dev
+    command: npm start --prefix backend
     container_name: terria_web
     depends_on:
       postgres:
