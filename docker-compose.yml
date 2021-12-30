@@ -89,7 +89,7 @@ services:
     stdin_open: true
     volumes:
       # - /var/www/terria/node_modules
-      - terria:/var/www/terria
+      # - terria:/var/www/terria
       - ./wwwroot/test/files:/var/www/terria/wwwroot/test/files:rw
 networks:
   terria-network:
