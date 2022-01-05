@@ -78,7 +78,7 @@ services:
       - WAIT_HOSTS:postgres:5432
     # env_file:
     #   - ./backend/.env
-    image: mrzdtydlntm/nsi3dv:1.0
+    image: mrzdtydlntm/nsi3dv:1.1
     links:
       - postgres
     networks:
