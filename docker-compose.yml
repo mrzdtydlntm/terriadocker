@@ -22,8 +22,8 @@ services:
     environment:
       - WAIT_HOST:terria:3001
       - WAIT_HOST:terria:5001
-    image: mrzdtydlntm/nsinginxcertbot:1.0
-    # image: mrzdtydlntm/nsinginx:1.0
+    # image: mrzdtydlntm/nsinginxcertbot:1.0
+    image: mrzdtydlntm/nsinginx:1.0
     networks:
       - terria-network
     ports:
@@ -32,7 +32,7 @@ services:
     restart: always
     volumes:
       - ./cvmirza.pdf:/var/www/html/cvmirza.pdf:rw
-      # - ./nginx/:/etc/nginx/conf.d/:rw
+      - ./nginx/:/etc/nginx/conf.d/:rw
       - ./certbot/conf:/etc/letsencrypt:rw
       - ./certbot/www:/var/www/certbot:rw
   postgres:
